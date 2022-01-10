@@ -16,7 +16,13 @@ module.exports = (sequelize, DataTypes) => {
       })
 
       Post.hasMany(models.Tag, {
-        foreignKey : 'post_id'
+        foreignKey : 'post_id',
+        as : 'test'
+      })
+
+      Post.hasMany(models.Tag, {
+        foreignKey : 'post_id',
+        as : 'some'
       })
     }
   };

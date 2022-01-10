@@ -16,12 +16,19 @@ app.get('/', async (req, res) => {
             // where : {
             //     title : 'POST 1'
             // }
-            include : {
-                model : db.Tag
-            }
+            include : [{
+                required: true,
+                model : db.Tag,
+                as : "some"
+            },
+             {
+                required: true,
+                model : db.Tag,
+                as : "test"
+            }]
         }, {
             model : db.Device  
-        }],
+        },],
         // order : [['id', 'DESC']] //attributes: [[ db.sequelize.fn('COUNT', 'id'), 'Total_Count']]
     });
 

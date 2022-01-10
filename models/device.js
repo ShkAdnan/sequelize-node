@@ -13,7 +13,9 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Device.belongsTo(models.User, {
         foreignKey : 'user_id',
+        as :"one"
       })
+     
     }
   };
   Device.init({

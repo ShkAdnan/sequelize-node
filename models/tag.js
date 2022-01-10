@@ -12,7 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Tag.belongsTo(models.Post, {
-        foreignKey : 'post_id'
+        foreignKey : 'post_id',
+        as : "some"
+      })
+
+      Tag.belongsTo(models.Post, {
+        foreignKey : 'post_id',
+        as : "test"
       })
     }
   };
